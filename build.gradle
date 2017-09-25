@@ -118,6 +118,16 @@ artifacts {
 }
 
 publishing {
+    repositories{
+        maven{
+            name='wf-repo'
+            url='https://repo.webbfontaine.com/nexus/content/repositories/thirdparty'
+            credentials {
+                username "$wfRepoUsername"
+                password "$wfRepoPassword"
+            }
+        }
+    }
     publications {
         mavenJava(MavenPublication) {
             artifact uberJar
